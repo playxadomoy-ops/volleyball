@@ -27,9 +27,9 @@ jobs:
 
     - name: Prepare file for Android Build
       run: |
-        # Тимчасово перейменовуємо файли виключно всередині віртуальної машини збірки,
-        # щоб не зачепити ваш другий проєкт у самому репозиторії GitHub.
+        # Тимчасово перейменовуємо оригінальний main.py, якщо він є
         if [ -f main.py ]; then mv main.py main_backup.py; fi
+        # Копіюємо ваш файл під назвою volleybolll.py (з трьома 'l') в main.py для збірки
         cp volleybolll.py main.py
 
     - name: Build APK with Buildozer
